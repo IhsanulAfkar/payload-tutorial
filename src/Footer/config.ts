@@ -10,6 +10,12 @@ export const Footer: GlobalConfig = {
   },
   fields: [
     {
+      name: 'footerImage',
+      label: 'Footer Image',
+      type: 'upload',
+      relationTo: 'image',
+    },
+    {
       name: 'navItems',
       type: 'array',
       fields: [

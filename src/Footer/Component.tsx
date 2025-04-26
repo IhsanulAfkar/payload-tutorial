@@ -17,7 +17,14 @@ export async function Footer() {
     <footer className="mt-auto border-t border-border bg-black dark:bg-card text-white">
       <div className="container py-8 gap-8 flex flex-col md:flex-row md:justify-between">
         <Link className="flex items-center" href="/">
-          <Logo />
+          {!footerData.footerImage && <Logo loading="eager" priority="high" className="invert dark:invert-0" />}
+          {footerData.footerImage && typeof footerData.footerImage === 'object' && <img
+            alt='header logo'
+            src={footerData.footerImage.url!}
+            loading="eager"
+            className='max-w-[9.375rem] w-full h-[34px] '
+            width={193}
+            height={34} />}
         </Link>
 
         <div className="flex flex-col-reverse items-start md:flex-row gap-4 md:items-center">

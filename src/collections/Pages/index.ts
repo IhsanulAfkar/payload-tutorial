@@ -20,6 +20,10 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
+import { ContentMediaBlock } from '@/blocks/ContentWithMedia/config'
+import { DiscussBlock } from '@/blocks/DiscussBlock/config'
+import { CustomersBlock } from '@/blocks/CustomersBlock/config'
+import { TeamsBlock } from '@/blocks/TeamsBlock/config'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -75,7 +79,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, ContentMediaBlock, DiscussBlock, CustomersBlock, TeamsBlock],
               required: true,
               admin: {
                 initCollapsed: true,
@@ -136,4 +140,5 @@ export const Pages: CollectionConfig<'pages'> = {
     },
     maxPerDoc: 50,
   },
+
 }
